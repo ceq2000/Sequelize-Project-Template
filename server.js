@@ -25,10 +25,11 @@ app.use(express.static('public'));
 require('./routes/api-routes.js')(app);
 
 
+
 // Starting our Express app
 // =============================================================
 app.listen(PORT, function() {
   console.log(`SERVER LISTENING ON: http://localhost:${PORT}`);
   console.log('----------------------------');
-
+db.sequelize.sync();
 });
